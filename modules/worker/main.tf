@@ -42,7 +42,7 @@ resource "hcloud_server" "worker" {
   }
   network {
     network_id = var.network_id
-    ip         = cidrhost(var.worker_network_cidr, index(keys(var.instances), each.key) + 201)
+    ip         = cidrhost(var.worker_subnet_cidr, index(keys(var.instances), each.key) + 201)
   }
   depends_on = [data.talos_machine_configuration.worker]
 }

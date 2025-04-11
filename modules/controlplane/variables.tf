@@ -1,46 +1,46 @@
 variable "cluster_name" {
-  description = "Nom du cluster Talos"
+  description = "Name of the Talos cluster"
   type        = string
 }
 
 variable "talos_version" {
-  description = "Version Talos"
+  description = "Talos OS version to use for the cluster"
   type        = string
 }
 
 variable "kubernetes_version" {
-  description = "Version Kubernetes"
+  description = "Kubernetes version to deploy on the cluster"
   type        = string
 }
 
 variable "image_id" {
-  description = "Image OS pour les instances"
+  description = "OS image ID for the instances (Talos OS image)"
   type        = string
 }
 
 variable "controlplane_type" {
-  description = "Type d'instance pour les control planes"
+  description = "Instance type for control plane nodes"
   type        = string
 }
 
 variable "controlplane_loadbalancer_ipv4" {
-  description = "IP du load balancer"
+  description = "Load balancer IPv4 address for control plane API access"
   type        = string
 }
 
 variable "network_id" {
-  description = "ID du réseau privé"
+  description = "ID of the private network for cluster communication"
   type        = string
 }
 
 variable "instances" {
-  description = "Configuration détaillée des instances control plane"
+  description = "Detailed configuration for control plane instances"
   type = map(object({
     location = string
   }))
 }
 
-variable "controlplane_network_cidr" {
-  description = "Sous-réseau dédié aux control planes"
+variable "controlplane_subnet_cidr" {
+  description = "Subnet CIDR dedicated to control plane nodes"
   type        = string
 }
