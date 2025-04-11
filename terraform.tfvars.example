@@ -1,0 +1,19 @@
+# Hetzner Cloud API token (recommended to use environment variable HCLOUD_TOKEN instead)
+# hcloud_token = "your_api_token"
+
+# Cluster configuration
+cluster_name       = "talos-prod"
+talos_version      = "v1.9.5"
+kubernetes_version = "v1.32.3"
+
+# The ID of your Talos OS image in Hetzner Cloud
+image_id           = "12345678"
+
+# Network configuration
+network_name       = "talos-network"
+network_zone       = "eu-central"
+network_cidr       = "10.0.0.0/24"
+
+# Instance types
+controlplane_type  = "cax11"  
+load_balancer_type = "lb11"

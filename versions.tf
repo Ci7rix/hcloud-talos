@@ -11,10 +11,6 @@ terraform {
   }
 }
 
-variable "hcloud_token" {
-  type = string
-}
-
 # hcloud provider configuration
 provider "hcloud" {
   token = var.hcloud_token
