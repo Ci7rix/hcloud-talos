@@ -40,7 +40,7 @@ variable "instances" {
   }))
 }
 
-variable "controlplane_subnet_cidr" {
+variable "controlplane_network_cidr" {
   description = "Sous-réseau dédié aux control planes"
   type        = string
 }

@@ -53,7 +53,7 @@ resource "hcloud_server" "controlplane" {
   }
   network {
     network_id = var.network_id
-    ip         = cidrhost(var.controlplane_subnet_cidr, index(keys(var.instances), each.key) + 101)
+    ip         = cidrhost(var.controlplane_network_cidr, index(keys(var.instances), each.key) + 101)
   }
   depends_on = [data.talos_machine_configuration.controlplane]
 }

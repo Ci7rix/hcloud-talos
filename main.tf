@@ -4,7 +4,6 @@ module "network" {
   network_name = var.network_name
   network_zone = var.network_zone
   network_cidr = var.network_cidr
-  subnet_cidr  = var.subnet_cidr
 }
 
 module "load_balancer" {
@@ -25,7 +24,7 @@ module "controlplane" {
   image_id                       = var.image_id
   controlplane_loadbalancer_ipv4 = module.load_balancer.controlplane_loadbalancer_ipv4
   controlplane_type              = var.controlplane_type
-  controlplane_subnet_cidr       = var.subnet_cidr
+  controlplane_network_cidr       = var.network_cidr
 
   instances = {
     "controlplane-1" = {
@@ -51,7 +50,7 @@ module "worker" {
   kubernetes_version             = var.kubernetes_version
   image_id                       = var.image_id
   network_id                     = module.network.network_id
-  worker_subnet_cidr             = var.subnet_cidr
+  worker_network_cidr             = var.network_cidr
   instances = {
     "worker-1" = {
       server_type = "cax21"

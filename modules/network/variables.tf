@@ -8,11 +8,6 @@ variable "network_cidr" {
   type        = string
 }
 
-variable "subnet_cidr" {
-  description = "Sous-réseau dédié au cluster"
-  type        = string
-}
-
 variable "network_zone" {
   description = "Zone réseau Hetzner"
   type        = string

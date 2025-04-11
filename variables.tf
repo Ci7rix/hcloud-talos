@@ -13,11 +13,6 @@ variable "network_cidr" {
   default = "10.0.0.0/24"
 }
 
-variable "subnet_cidr" {
-  type    = string
-  default = "10.0.0.0/24"
-}
-
 variable "load_balancer_type" {
   type    = string
   default = "lb11"

@@ -46,7 +46,7 @@ variable "machine_secrets" {
   type        = any
 }
 
-variable "worker_subnet_cidr" {
+variable "worker_network_cidr" {
   description = "Sous-réseau dédié aux workers"
   type        = string
 }
